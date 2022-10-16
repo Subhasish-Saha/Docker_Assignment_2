@@ -1,0 +1,16 @@
+name : Docker Assignment 2 : Build and push docker images into docker hub
+on:
+  push:
+    branches:
+     - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build and Push Image
+        run:  |
+          echo "${{ secrets.PASSWORD }}" | docker login -u "subhasish30" --password-stdin
+          docker image build -t subhasish/subhasish30/hello-world-app:latest .
+          docker push subhasish30/hello-world-app:latest
