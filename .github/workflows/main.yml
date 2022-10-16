@@ -1,9 +1,10 @@
-name : Docker Assignment 2 : Build and push docker images into docker hub
+name : Docker Assignment 2
+
 on:
   push:
     branches: [main]
-  pull_requests:
-    branches: [main]
+ pull_request:
+     branches: [main]
 
 jobs:
   build:
