@@ -15,6 +15,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build and Push Image
         run:  |
-          echo "${{ secrets.PASSWORD }}" | docker login "subhasish30" --password-stdin
+          echo "${{ secrets.PASSWORD }}" | docker login --username "subhasish30" --password-stdin
           docker image build -t subhasish30/hello-world-app:latest .
           docker push subhasish30/hello-world-app:latest
