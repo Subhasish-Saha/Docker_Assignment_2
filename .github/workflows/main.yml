@@ -1,12 +1,15 @@
 name : Docker Assignment 2 : Build and push docker images into docker hub
 on:
   push:
-    branches:
-     - main
+    branches: [main]
+  pull_requests:
+    branches: [main]
 
 jobs:
-  deploy:
+  build:
+  
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v2
       - name: Build and Push Image
