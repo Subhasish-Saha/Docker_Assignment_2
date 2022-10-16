@@ -13,10 +13,8 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
-        env:
-          DOCKERPW: ${{ env.DOCKERPW }}
       - name: Build and Push Image
         run:  |
-          echo $DOCKERPW | docker login --username "subhasish30" --password-stdin
+          echo ${{ secrets.DOCKERPW }} | docker login --username "subhasish30" --password-stdin
           docker image build -t subhasish30/hello-world-app:latest .
           docker push subhasish30/hello-world-app:latest
