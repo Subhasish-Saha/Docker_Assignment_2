@@ -12,5 +12,5 @@ jobs:
       - name: Build and Push Image
         run:  |
           echo "${{ secrets.PASSWORD }}" | docker login -u "subhasish30" --password-stdin
-          docker image build -t subhasish/subhasish30/hello-world-app:latest .
+          docker image build -t subhasish30/hello-world-app:latest .
           docker push subhasish30/hello-world-app:latest
